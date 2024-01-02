@@ -2,6 +2,8 @@ import { Box, Text, Image } from '@chakra-ui/react';
 import HamburgerMenu from './HamburgerMenu';
 import { NAVBAR_FONT } from '../constants/Fonts';
 import { keyframes } from '@emotion/react';
+import ReactRouterLink from './ReactRouterLink';
+import React from 'react';
 
 const rotate = keyframes`
   from {
@@ -23,16 +25,20 @@ function Navbar() {
         gap="15px"
       >
         <HamburgerMenu />
-        <Box display="flex" alignItems="center" gap="4px">
-          <Text {...NAVBAR_FONT}>C</Text>
-          <Image
-            src="/src/assets/Worldwide.png"
-            width="24px"
-            height="24px"
-            css={{ animation: `${rotate} 5s linear infinite` }}
-          />
-          <Text {...NAVBAR_FONT}>untries App</Text>
-        </Box>
+        <ReactRouterLink to="/">
+          <Box display="flex" alignItems="center" gap="4px">
+            <Text {...NAVBAR_FONT}>C</Text>
+
+            <Image
+              src="/src/assets/Worldwide.png"
+              width="24px"
+              height="24px"
+              css={{ animation: `${rotate} 5s linear infinite` }}
+            />
+
+            <Text {...NAVBAR_FONT}>untries App</Text>
+          </Box>
+        </ReactRouterLink>
       </Box>
     </Box>
   );
