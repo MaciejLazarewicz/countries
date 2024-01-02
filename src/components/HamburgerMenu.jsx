@@ -1,6 +1,6 @@
 import { Box, Menu, MenuButton, MenuList, MenuItem } from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
-import ReactRouterLink from './ReactRouterLink';
+
 import { HAMBURGER_MENU_FONT } from '../constants/Fonts';
 
 function HamburgerMenu() {
@@ -15,30 +15,15 @@ function HamburgerMenu() {
           <HamburgerIcon color="#fff" boxSize={45} />
         </MenuButton>
         <MenuList width="100px">
-          <MenuItem style={HAMBURGER_MENU_FONT}>
-            Africa
-            <ReactRouterLink />
-          </MenuItem>
+          <MenuItem style={HAMBURGER_MENU_FONT}>Africa</MenuItem>
 
-          <MenuItem style={HAMBURGER_MENU_FONT}>
-            America
-            <ReactRouterLink />
-          </MenuItem>
+          <MenuItem style={HAMBURGER_MENU_FONT}>America</MenuItem>
 
-          <MenuItem style={HAMBURGER_MENU_FONT}>
-            Europe
-            <ReactRouterLink />
-          </MenuItem>
+          <MenuItem style={HAMBURGER_MENU_FONT}>Europe</MenuItem>
 
-          <MenuItem style={HAMBURGER_MENU_FONT}>
-            Asia
-            <ReactRouterLink />
-          </MenuItem>
+          <MenuItem style={HAMBURGER_MENU_FONT}>Asia</MenuItem>
 
-          <MenuItem style={HAMBURGER_MENU_FONT}>
-            Australia
-            <ReactRouterLink />
-          </MenuItem>
+          <MenuItem style={HAMBURGER_MENU_FONT}>Australia</MenuItem>
         </MenuList>
       </Menu>
     </Box>
