@@ -45,7 +45,6 @@ function CountryData() {
             abbreviation={countryData.abbreviation}
             population={countryData.population}
             capital={countryData.capital}
-            flag={`http://localhost:5000/flags/${countryData.country.toLowerCase()}`}
             languages={countryData.language}
             cities={countryData.cities}
             coordinates={countryData.coordinates}
