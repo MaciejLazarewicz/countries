@@ -12,7 +12,6 @@ function Country({
   cities,
   government,
 }) {
-  console.log(government);
   return (
     <Box>
       <Navbar />

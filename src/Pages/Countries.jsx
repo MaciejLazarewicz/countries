@@ -13,6 +13,14 @@ function Countries({ country, abbreviation, population, capital, flag }) {
           <Text> {population}</Text>
 
           <Text>{capital}</Text>
+
+          <Box>
+            <img
+              src={flag}
+              alt="flag"
+              style={{ width: '100px', height: '100px' }}
+            />
+          </Box>
         </Box>
       </Box>
     </ReactRouterLink>

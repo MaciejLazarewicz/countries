@@ -14,7 +14,6 @@ function CountryData() {
       try {
         const response = await fetch(`http://localhost:5000/data/${name}`);
         const responseData = await response.json();
-        console.log(responseData);
         setCountryData(responseData);
       } catch (error) {
         console.error('error:', error);
@@ -22,10 +21,11 @@ function CountryData() {
     };
     const fetchGovernmentData = async () => {
       try {
-        const response = await fetch('http://localhost:5000/government-type/');
+        const response = await fetch(
+          `http://localhost:5000/government-type/${name}`
+        );
         const governmentData = await response.json();
-        console.log(governmentData);
-        setGovernmentData(governmentData);
+        setGovernmentData(governmentData[0]);
       } catch (error) {
         console.error('error:', error);
       }
@@ -49,6 +49,7 @@ function CountryData() {
             languages={countryData.language}
             cities={countryData.cities}
             coordinates={countryData.coordinates}
+            government={governmentData.government}
           />
         </Box>
       )}
