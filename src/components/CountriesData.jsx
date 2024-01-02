@@ -31,9 +31,9 @@ function CountriesData() {
         const response = await fetch(`http://localhost:5000/flags/`);
         const responseData = await response.json();
 
-        const countriesArray = responseData.data || [];
+        const flagsArray = responseData.data || [];
 
-        setFlags(countriesArray);
+        setFlags(flagsArray);
       } catch (error) {
         console.error('error:', error);
       }
@@ -51,7 +51,7 @@ function CountriesData() {
         justifyItems="center"
         marginTop="50px"
       >
-        {countryData &&
+        {Boolean(countryData) &&
           countryData.map((country) => {
             const correctFlag =
               flags?.find((flag) => flag.country === country.country) || '';
