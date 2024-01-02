@@ -19,10 +19,9 @@ function Country({
         {country}
         {abbreviation}
         {capital}
-        {coordinates.north}
+        {/* {coordinates.north} */}
       </Text>
 
-      {coordinates.south}
       <Text>{government}</Text>
     </Box>
   );

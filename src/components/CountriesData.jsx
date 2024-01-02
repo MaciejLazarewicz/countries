@@ -1,4 +1,4 @@
-import { Box } from '@chakra-ui/react';
+import { Box, Card } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Countries from '../Pages/Countries';
@@ -42,7 +42,7 @@ function CountriesData() {
   }, [name]);
 
   return (
-    <Box>
+    <Box width="100%">
       <Navbar />
       <Box
         width="100%"
@@ -50,6 +50,7 @@ function CountriesData() {
         gridTemplateColumns="repeat(auto-fit,minmax(350px,1fr))"
         justifyItems="center"
         marginTop="50px"
+        gap="50px"
       >
         {Boolean(countryData) &&
           countryData.map((country) => {
@@ -57,16 +58,15 @@ function CountriesData() {
               flags?.find((flag) => flag.country === country.country) || '';
 
             return (
-              <Box key={country.country}>
-                <Countries
-                  name={name}
-                  country={country.country}
-                  abbreviation={country.abbreviation}
-                  population={country.population}
-                  capital={country.capital}
-                  flag={correctFlag.flagBase64}
-                />
-              </Box>
+              <Countries
+                key={country.country}
+                name={name}
+                country={country.country}
+                population={country.population}
+                capital={country.capital}
+                flag={correctFlag.flagBase64}
+                border="2px solid #f51"
+              />
             );
           })}
       </Box>
