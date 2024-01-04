@@ -18,6 +18,10 @@ export const router = createBrowserRouter([
     path: '/Country/:name',
     element: <CountryData />,
   },
+  {
+    path: '/Countries/:page',
+    element: <CountriesData />,
+  },
 ]);
 
 export default router;
