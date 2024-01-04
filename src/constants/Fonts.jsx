@@ -12,3 +12,13 @@ export const HAMBURGER_MENU_FONT = {
   cursor: 'pointer',
   border: 'none',
 };
+export const COUNTRIES_DESCRIPTION_FONT = {
+  fontSize: '14px',
+  color: '#000',
+  letterSpacing: '2px',
+  borderRadius: '10px',
+  border: '4px solid #363636',
+  fontWeight: 'bold',
+  textTransform: 'uppercase',
+  backgroundColor: '#C0C0C0',
+};
