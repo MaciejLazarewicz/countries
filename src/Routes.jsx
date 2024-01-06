@@ -14,13 +14,10 @@ export const router = createBrowserRouter([
     path: '/CountriesData',
     element: <CountriesData />,
   },
+
   {
     path: '/Country/:name',
     element: <CountryData />,
-  },
-  {
-    path: '/Countries/:page',
-    element: <CountriesData />,
   },
 ]);
 

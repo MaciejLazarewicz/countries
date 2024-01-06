@@ -19,13 +19,7 @@ function CountriesData() {
       const countryData = await countryResponse.json();
       const countriesArray = countryData.data || [];
 
-      setCountryData((prevData) => {
-        if (currentPage === 1) {
-          return countriesArray;
-        }
-
-        return [...prevData, ...countriesArray];
-      });
+      setCountryData(countriesArray);
 
       const flagResponse = await fetch(
         `http://localhost:5000/flags/?page=${currentPage}`
@@ -33,13 +27,7 @@ function CountriesData() {
       const flagData = await flagResponse.json();
       const flagsArray = flagData.data || [];
 
-      setFlags((prevFlags) => {
-        if (currentPage === 1) {
-          return flagsArray;
-        }
-
-        return [...prevFlags, ...flagsArray];
-      });
+      setFlags(flagsArray);
     } catch (error) {
       console.error('Error during data fetch:', error);
     }
@@ -61,12 +49,19 @@ function CountriesData() {
   return (
     <Box width="100%" backgroundColor="#f512">
       <Navbar />
+
+      <NextAndPreviousButton
+        nextPage={handleNextPage}
+        prevPage={handlePrevPage}
+        isPrevButtonDisabled={currentPage <= 1}
+      />
+
       <Box
         width="100%"
         display="grid"
         gridTemplateColumns="repeat(auto-fit,minmax(350px,1fr))"
         justifyItems="center"
-        marginTop="50px"
+        marginTop="30px"
         gap="50px"
       >
         {Boolean(countryData) &&
@@ -86,11 +81,6 @@ function CountriesData() {
             );
           })}
       </Box>
-
-      <NextAndPreviousButton
-        nextPage={handleNextPage}
-        prevPage={handlePrevPage}
-      />
     </Box>
   );
 }
