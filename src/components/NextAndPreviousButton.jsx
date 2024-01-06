@@ -1,10 +1,20 @@
-import { Box, Button } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
+import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
 
-function NextAndPreviousButton({ nextPage, prevPage }) {
+function NextAndPreviousButton({ nextPage, prevPage, isPrevButtonDisabled }) {
+  const chevronCommonStyles = {
+    boxSize: 50,
+    cursor: 'pointer',
+    color: '#0D131A',
+    _hover: { color: '#F50057' },
+  };
   return (
-    <Box width="100%" display="flex" justifyContent="space-between">
-      <Button onClick={prevPage}>Delete</Button>
-      <Button onClick={nextPage}>Load More</Button>
+    <Box width="100%" marginTop="30px" display="flex" justifyContent="flex-end">
+      {!isPrevButtonDisabled && (
+        <ChevronLeftIcon onClick={prevPage} sx={chevronCommonStyles} />
+      )}
+
+      <ChevronRightIcon onClick={nextPage} sx={chevronCommonStyles} />
     </Box>
   );
 }
