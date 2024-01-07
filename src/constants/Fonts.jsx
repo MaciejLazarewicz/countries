@@ -20,5 +20,11 @@ export const COUNTRIES_DESCRIPTION_FONT = {
   border: '4px solid #363636',
   fontWeight: 'bold',
   textTransform: 'uppercase',
-  backgroundColor: '#C0C0C0',
+};
+export const FOOTER_FONT = {
+  fontSize: '12px',
+  textTransform: 'uppercase',
+  fontWeight: 'bold',
+  color: '#fff',
+  letterSpacing: '1px',
 };
