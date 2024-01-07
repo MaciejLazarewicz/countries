@@ -3,6 +3,8 @@ import Navbar from '../components/Navbar';
 import SearchBar from '../components/SearchBar';
 import ReactRouterLink from '../components/ReactRouterLink';
 import React from 'react';
+import Footer from '../components/Footer';
+import { MAIN_BACKGROUND_COLOR } from '../constants/Colors';
 
 function HomePage() {
   // const [countriesData, setCountriesData] = useState(null);
@@ -22,7 +24,7 @@ function HomePage() {
   // }, []);
 
   return (
-    <Box>
+    <Box {...MAIN_BACKGROUND_COLOR}>
       <Navbar />
       <Box
         display="flex"
@@ -70,6 +72,8 @@ function HomePage() {
         </Box>
       </Box>
       <ReactRouterLink to="/CountriesData">Countries</ReactRouterLink>
+
+      <Footer />
     </Box>
   );
 }

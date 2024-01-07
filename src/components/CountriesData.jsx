@@ -1,9 +1,11 @@
-import { Box, Button } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import Countries from '../Pages/Countries';
 import Navbar from './Navbar';
 import NextAndPreviousButton from './NextAndPreviousButton';
+import { MAIN_BACKGROUND_COLOR } from '../constants/Colors';
+import Footer from './Footer';
 
 function CountriesData() {
   const { name } = useParams();
@@ -47,7 +49,7 @@ function CountriesData() {
   };
 
   return (
-    <Box width="100%" backgroundColor="#f512">
+    <Box width="100%" {...MAIN_BACKGROUND_COLOR}>
       <Navbar />
 
       <NextAndPreviousButton
@@ -81,6 +83,8 @@ function CountriesData() {
             );
           })}
       </Box>
+
+      <Footer />
     </Box>
   );
 }

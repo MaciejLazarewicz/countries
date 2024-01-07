@@ -3,7 +3,7 @@ import HamburgerMenu from './HamburgerMenu';
 import { NAVBAR_FONT } from '../constants/Fonts';
 import { keyframes } from '@emotion/react';
 import ReactRouterLink from './ReactRouterLink';
-import React from 'react';
+import { NAV_BACKGROUND_COLOR } from '../constants/Colors';
 
 const rotate = keyframes`
   from {
@@ -16,7 +16,7 @@ const rotate = keyframes`
 
 function Navbar() {
   return (
-    <Box backgroundColor="#2478D1">
+    <Box {...NAV_BACKGROUND_COLOR}>
       <Box
         display="flex"
         flexDir="row"

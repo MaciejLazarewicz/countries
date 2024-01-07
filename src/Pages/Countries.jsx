@@ -1,6 +1,7 @@
 import { Text, Image, Card, CardBody, Heading } from '@chakra-ui/react';
 import ReactRouterLink from '../components/ReactRouterLink';
 import { COUNTRIES_DESCRIPTION_FONT } from '../constants/Fonts';
+import { COUNTRIES_CARD_BACKGROUND_COLOR } from '../constants/Colors';
 
 function Countries({ country, abbreviation, population, capital, flag }) {
   return (
@@ -9,6 +10,7 @@ function Countries({ country, abbreviation, population, capital, flag }) {
       style={{
         ...COUNTRIES_DESCRIPTION_FONT,
       }}
+      {...COUNTRIES_CARD_BACKGROUND_COLOR}
     >
       <ReactRouterLink to={`/Country/${country.toLowerCase()}`}>
         <CardBody display="flex" flexDir="column" alignItems="center">
