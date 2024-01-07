@@ -2,76 +2,51 @@ import { Box, Image, Text } from '@chakra-ui/react';
 import Navbar from '../components/Navbar';
 import SearchBar from '../components/SearchBar';
 import ReactRouterLink from '../components/ReactRouterLink';
-import React from 'react';
+
 import Footer from '../components/Footer';
-import { MAIN_BACKGROUND_COLOR } from '../constants/Colors';
 
 function HomePage() {
-  // const [countriesData, setCountriesData] = useState(null);
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const data = await FetchCountriesData();
-  //       setCountriesData(data.data);
-  //       console.log(data);
-  //     } catch (error) {
-  //       console.error('Error fetching countriesData:', error);
-  //     }
-  //   };
-
-  //   fetchData();
-  // }, []);
-
+  const continents = ['Africa', 'America', 'Australia', 'Asia', 'Europe'];
   return (
-    <Box {...MAIN_BACKGROUND_COLOR}>
+    <Box width="100%">
       <Navbar />
       <Box
+        position="absolute"
+        top="10%"
+        left="40%"
+        right="40%"
         display="flex"
-        flexDir="column"
-        width="100%"
-        marginTop="50px"
-        textAlign="center"
+        zIndex="1"
       >
-        <Box
-          display="flex"
-          justifyContent="center"
-          gap="25px"
-          marginBottom="25px"
-        >
-          <Box>
-            <Image width="250px" height="250px" src="/src/assets/Africa.png" />
-
-            <Text>Africa</Text>
-          </Box>
-          <Box>
-            <Image width="250px" height="250px" src="/src/assets/America.png" />
-            <Text>America</Text>
-          </Box>
-        </Box>
-        <Box display="flex" justifyContent="center" marginBottom="25px">
-          <SearchBar />
-        </Box>
-        <Box display="flex" justifyContent="center" gap="25px">
-          <Box>
-            <Image
-              width="250px"
-              height="250px"
-              src="/src/assets/Australia.png"
-            />
-            <Text>Australia</Text>
-          </Box>
-          <Box>
-            <Image width="250px" height="250px" src="/src/assets/Asia.png" />
-            <Text>Asia</Text>
-          </Box>
-          <Box>
-            <Image width="250px" height="250px" src="/src/assets/Europe.png" />
-            <Text>Europe</Text>
-          </Box>
-        </Box>
+        <SearchBar />
       </Box>
-      <ReactRouterLink to="/CountriesData">Countries</ReactRouterLink>
+
+      <Box position="relative">
+        <Box position="absolute" top="50%" left="35%" zIndex="1">
+          <ReactRouterLink to="/CountriesData">All Countries</ReactRouterLink>
+        </Box>
+        <Image
+          position="relative"
+          width="100%"
+          height="auto"
+          src="/src/assets/WorldMap.jpg"
+        />
+        <Text position="absolute" zIndex="1" top="55%" left="50%">
+          {continents[0]}
+        </Text>
+        <Text position="absolute" zIndex="1" top="40%" left="20%">
+          {continents[1]}
+        </Text>
+        <Text position="absolute" zIndex="1" top="73%" right="15%">
+          {continents[2]}
+        </Text>
+        <Text position="absolute" zIndex="1" top="40%" right="30%">
+          {continents[3]}
+        </Text>
+        <Text position="absolute" zIndex="1" top="30%" right="40%">
+          {continents[4]}
+        </Text>
+      </Box>
 
       <Footer />
     </Box>
