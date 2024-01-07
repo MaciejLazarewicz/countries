@@ -83,8 +83,9 @@ function CountriesData() {
             );
           })}
       </Box>
-
-      <Footer />
+      <Box marginTop="40px">
+        <Footer />
+      </Box>
     </Box>
   );
 }

@@ -11,7 +11,7 @@ function Footer() {
       justifyContent="center"
       backgroundColor="#000"
       height="55px"
-      marginTop="15px"
+      marginTop="-5px"
     >
       <Box display="flex" flexDir="column" {...FOOTER_FONT}>
         <Box display="flex" gap="10px" marginTop="-5px" marginBottom="-10px">
