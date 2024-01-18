@@ -5,7 +5,7 @@ import { HAMBURGER_MENU_FONT } from '../constants/Fonts';
 
 function HamburgerMenu() {
   return (
-    <Box>
+    <Box zIndex="1">
       <Menu>
         <MenuButton
           border="none"
